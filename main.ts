@@ -9,10 +9,12 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-// The line, first draft: a three-beat escalation — delete, rescue, then
-// delete the rescue — with a deadpan justification landing at the end.
+// The line: a three-beat escalation — delete, rescue, then delete the
+// rescue — with a deadpan justification landing at the end. Naming the
+// files (config.json, backup.json) makes the failure concrete and
+// believable instead of a vague "I deleted a file" joke.
 const LINE =
-  'I deleted the config file, restored it from the backup, then deleted the backup too, just to be thorough.';
+  'I deleted config.json, restored it from backup.json, then deleted backup.json too, just to be thorough.';
 
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 mkdirSync(outputDir, { recursive: true });
